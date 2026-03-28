@@ -1,5 +1,7 @@
 export default async function handler(req, res) {
   try {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
     const repoRes = await fetch(
       "https://api.github.com/search/repositories?q=artificial+intelligence&sort=stars&per_page=5"
     );
